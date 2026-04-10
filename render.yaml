@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm run dev
+    envVars:
+      - key: MONGO_URI
+        value: your_mongodb_connection_string
+
+  - type: web
+    name: frontend
+    env: node
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm run preview
